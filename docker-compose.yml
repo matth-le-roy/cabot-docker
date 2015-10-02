@@ -1,0 +1,39 @@
+cabot:
+  build: .
+  links:
+    - postgres
+    - redis
+    - smtp
+  volumes:
+    - /opt/cabot
+  environment:
+    DATABASE_URL: "postgres://postgres:cabot@postgres:5432/postgres"
+    CELERY_BROKER_URL: "redis://redis:6379/1"
+    SES_HOST: smtp
+    SES_PORT: 25
+
+# we do not use the official postgres image here as it does not start quickly
+# enough for compose
+postgres:
+  image: orchardup/postgresql
+  environment:
+    POSTGRESQL_USER: postgres
+    POSTGRESQL_PASS: cabot
+    POSTGRESQL_DB: postgres
+
+redis:
+  image: redis
+
+smtp:
+  image: tianon/exim4
+
+nginx:
+  image: nginx
+  ports:
+     - "8080:8080"
+  links:
+     - cabot
+  volumes_from:
+     - cabot
+  volumes:
+     - ./nginx.conf:/etc/nginx/nginx.conf:ro
