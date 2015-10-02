@@ -9,11 +9,13 @@ git pull https://github.com/socialwareinc/cabot-docker.git
 docker-compose up
 ```
 This will create 5 containers with the appropriate links:
+
 * Postgres
 * SMTP
 * Redis
 * Cabot
 * Nginx
+
 Cabot is then accessible at http://$docker-machine-ip:8080. The default user is
 admin/admin.
 
