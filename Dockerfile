@@ -33,5 +33,6 @@ ENV DJANGO_SECRET_KEY 2FL6ORhHwr5eX34pP9mMugnIOd3jzVuT45f7w430Mt5PnEwbcJgma0q8zU
 
 RUN ["ln", "-s", "/usr/bin/nodejs", "/usr/bin/node"]
 
+EXPOSE 5000
 WORKDIR /opt/cabot/
 CMD . /opt/cabot/run.sh

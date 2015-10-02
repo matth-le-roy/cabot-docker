@@ -13,7 +13,7 @@ cabot:
     SES_PORT: 25
 
 # we do not use the official postgres image here as it does not start quickly
-# enough for compose
+# enough for use with docker-compose
 postgres:
   image: orchardup/postgresql
   environment:
