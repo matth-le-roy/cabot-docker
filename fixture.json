@@ -1,0 +1,20 @@
+[
+  {
+    "pk": 1,
+    "model": "auth.user",
+    "fields": {
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": true,
+      "is_staff": true,
+      "last_login": "2014-04-14T15:29:36.813Z",
+      "groups": [],
+      "user_permissions": [],
+      "password": "pbkdf2_sha256$12000$9D5epycqTfWd$8fMp45KNFOGl4yg2+9XAb7xp+8oCbw4Gh1Y/LE4n1EY=",
+      "email": "docker@example.com",
+      "date_joined": "2014-04-14T15:29:36.813Z"
+    }
+  }
+]
