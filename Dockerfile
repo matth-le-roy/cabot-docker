@@ -10,7 +10,7 @@ RUN apt-get update
 RUN apt-get install -y build-essential nodejs libpq-dev python-dev npm git \
                        curl libldap2-dev libsasl2-dev iputils-ping
 
-RUN curl -OL https://raw.github.com/pypa/pip/master/contrib/get-pip.py
+RUN curl -OL https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
 
 RUN git clone https://github.com/arachnys/cabot.git /opt/cabot
@@ -19,6 +19,7 @@ ADD run.sh /opt/cabot/
 ADD gunicorn.conf /opt/cabot/
 
 RUN pip install -e /opt/cabot
+RUN pip install cabot-alert-slack
 RUN npm install --no-color -g coffee-script less@1.3
 
 ENV PATH $PATH:/opt/cabot/

@@ -1,6 +1,7 @@
 # cabot-docker
 Containerized [Cabot](https://github.com/arachnys/cabot) for [Socialware](https://github.com/socialwareinc).
-This container is loosely based on [shoonoise/cabot-docker](https://github.com/shoonoise/cabot-docker).
+This container is loosely based on [shoonoise/cabot-docker](https://github.com/shoonoise/cabot-docker)
+and includes the [cabot-alert-slack](https://github.com/lblasc/cabot-alert-slack) plugin.
 
 ## Testing and Development
 To quickly deploy cabot, simply use docker-compose:
